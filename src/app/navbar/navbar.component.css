@@ -6,3 +6,12 @@
   font-size: 2em;
   text-shadow: 0 0 7px black, 0 0 7px black;
 }
+
+.navBackground {
+  background-color: rgba(56, 63, 87, 80%);
+  transition: all 0.5s;
+}
+
+.navbar {
+  transition: all 0.5s;
+}

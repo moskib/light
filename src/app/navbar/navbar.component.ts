@@ -6,11 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  navBackgroundChange = false;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    window.addEventListener(
+      'scroll',
+      function(e) {
+        this.scroll(e);
+      }.bind(this),
+      true
+    );
+  }
 
-  test() {
-    console.log('hello');
+  scroll(event: any) {
+    const position = document.documentElement.scrollTop;
+    if (position === 0) this.navBackgroundChange = false;
+    else this.navBackgroundChange = true;
   }
 }
