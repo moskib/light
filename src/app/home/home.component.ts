@@ -1,4 +1,6 @@
+import { BookService } from './../services/book.service';
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  book$;
+  books$;
+  constructor(private bookService: BookService) {}
 
   ngOnInit() {
+    this.book$ = this.bookService.getbook();
+    this.books$ = this.bookService.getBooks();
   }
-
 }
