@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Leckerli+One');
+
+.navbar-brand {
+  color: white;
+  font-family: 'Leckerli One', cursive;
+  font-size: 2em;
+  text-shadow: 0 0 7px black, 0 0 7px black;
+}

@@ -4,10 +4,29 @@
   margin-right: auto;
   height: 195px;
   width: 128px;
+  border: 1px solid #a84a4f;
 }
 
 .card {
   padding-top: 50px;
+}
+
+hr {
+  background-color: #f1bc9b;
+}
+
+.card-title {
+  color: #ff8c25;
+}
+
+.card-text {
+  color: #bf8c74;
+}
+
+.btn-card {
+  background-color: #a84a4f;
+  border-color: #a84a4f;
+  color: white;
 }
 
 .card-columns {

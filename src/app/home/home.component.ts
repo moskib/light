@@ -1,6 +1,5 @@
 import { BookService } from './../services/book.service';
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-home',
