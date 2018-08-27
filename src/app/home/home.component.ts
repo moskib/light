@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
-
-import { BookDialogComponent } from '../book-dialog/book-dialog.component';
 import { BookService } from './../services/book.service';
 
 @Component({
@@ -11,8 +8,6 @@ import { BookService } from './../services/book.service';
 })
 export class HomeComponent implements OnInit {
   books$;
-  bookIsbns;
-  books = [];
 
   constructor(private bookService: BookService) {}
 
