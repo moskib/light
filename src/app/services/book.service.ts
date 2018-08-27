@@ -28,6 +28,7 @@ export class BookService {
             authors: book['volumeInfo']['authors'],
             publishedDate: book['volumeInfo']['publishedDate'],
             title: book['volumeInfo']['title'],
+            description: book['volumeInfo']['description'],
             imageUrl: book['volumeInfo']['imageLinks']
               ? book['volumeInfo']['imageLinks']['thumbnail']
               : 'https://dummyimage.com/128X195/000/0011ff&text=no+image'

@@ -1,0 +1,11 @@
+.btn-card {
+  background-color: #a84a4f;
+  border-color: #a84a4f;
+  color: white;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}

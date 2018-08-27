@@ -1,0 +1,33 @@
+<mat-dialog-content>
+  <div *ngIf="data">
+    <div class="row">
+      <div class="col-6">
+        <img src="{{ data.imageUrl }}">
+      </div>
+      <div class="col-6 my-auto">
+        <dl>
+          <dt>Title:</dt>
+          <dd>{{ data.title }}</dd>
+          <dt>Authors:</dt>
+          <dd>{{ data.authors }}</dd>
+          <dt>Publish Date: </dt>
+          <dd>{{ data.publishedDate | date }}</dd>
+          <dt>Id:</dt>
+          <dd>{{ data.id }}</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="row"
+         *ngIf="data.description">
+      <dl class="mx-3">
+        <dt>A bit about this book:</dt>
+        <dd>{{ data.description }}</dd>
+
+      </dl>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-dialog-close
+          class="btn btn-card ml-auto mr-3">Close</button>
+</mat-dialog-actions>
