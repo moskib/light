@@ -8,5 +8,13 @@ import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
   styleUrls: ['./warning-sheet.component.css']
 })
 export class WarningSheetComponent {
-  constructor(private bottomSheetRef: MatBottomSheetRef<EditDialogComponent>) {}
+  constructor(public bottomSheetRef: MatBottomSheetRef<EditDialogComponent>) {}
+
+  dismiss() {
+    this.bottomSheetRef.dismiss(false);
+  }
+
+  acceptChanges() {
+    this.bottomSheetRef.dismiss(true);
+  }
 }

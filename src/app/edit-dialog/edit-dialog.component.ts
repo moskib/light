@@ -21,7 +21,12 @@ export class EditDialogComponent {
     private bottomSheet: MatBottomSheet
   ) {}
 
-  openWerningSheet() {
-    this.bottomSheet.open(WarningSheetComponent);
+  openWarningSheet(f) {
+    this.bottomSheet
+      .open(WarningSheetComponent)
+      .afterDismissed()
+      .subscribe(result => {
+        console.log(f);
+      });
   }
 }

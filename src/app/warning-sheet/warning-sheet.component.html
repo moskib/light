@@ -4,10 +4,12 @@
   </mat-grid-tile>
   <mat-grid-tile [colspan]="6">
     <button mat-raised-button
+            (click)="acceptChanges()"
             class="btn mx-auto">YES</button>
   </mat-grid-tile>
   <mat-grid-tile [colspan]="6">
     <button mat-raised-button
+            (click)="dismiss()"
             class="btn mx-auto">NO</button>
   </mat-grid-tile>
 </mat-grid-list>
