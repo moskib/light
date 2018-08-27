@@ -1,4 +1,4 @@
-<div *ngIf="(books$ | async) as books"
+<div *ngIf="books$|async as books"
      class="card-columns">
   <div *ngFor="let book of books"
        class="card mx-auto mb-5"

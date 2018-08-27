@@ -1,44 +1,38 @@
+import { AppConfig } from './../config';
+import { map } from 'rxjs/operators';
+import { PopularbooksService } from './popularbooks.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-  url =
+  private url =
     'https://books.google.com/ebooks?id=buc0AAAAMAAJ&dq=holmes&as_brr=4&source=webstore_bookcard';
-  key = 'AIzaSyADwQkVMrQRRkju9MTD8EQnJpOA7yBO8hs';
+  private key = AppConfig.GOOGLE_BOOKS_KEY;
+  private volumeUrl = 'httpx://www.googleapis.com/books/v1/volumes/';
 
-  queryUrl = 'https://www.googleapis.com/books/v1/volumes?q=harry+potter';
+  private queryUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
+
   constructor(private http: HttpClient) {}
 
-  getbook() {
-    return this.http.get(this.url).pipe(
-      map((book: Response) => ({
-        id: book['id'],
-        authors: book['volumeInfo']['authors'],
-        publishedDate: book['volumeInfo']['publishedDate'],
-        title: book['volumeInfo']['title'],
-        desription: book['volumeInfo']['description'],
-        imageUrl: book['volumeInfo']['imageLinks']['medium']
-      }))
-    );
-  }
-
-  getBooks() {
-    return this.http.get(this.queryUrl).pipe(
-      map((books: Response) =>
-        books['items'].map(book => ({
-          id: book['id'],
-          authors: book['volumeInfo']['authors'],
-          publishedDate: book['volumeInfo']['publishedDate'],
-          title: book['volumeInfo']['title'],
-          imageUrl: book['volumeInfo']['imageLinks']
-            ? book['volumeInfo']['imageLinks']['thumbnail']
-            : 'https://dummyimage.com/128X195/8a8a8a/dadade&text=no+image'
-        }))
-      )
-    );
+  getBooks(): Observable<{}> {
+    return this.http
+      .get(this.queryUrl + 'author:james+patterson&' + this.key)
+      .pipe(
+        map((books: Response) =>
+          books['items'].map(book => ({
+            id: book['id'],
+            authors: book['volumeInfo']['authors'],
+            publishedDate: book['volumeInfo']['publishedDate'],
+            title: book['volumeInfo']['title'],
+            imageUrl: book['volumeInfo']['imageLinks']
+              ? book['volumeInfo']['imageLinks']['thumbnail']
+              : 'https://dummyimage.com/128X195/000/0011ff&text=no+image'
+          }))
+        )
+      );
   }
 }
