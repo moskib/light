@@ -1,9 +1,9 @@
-import { AppConfig } from './../config';
-import { map } from 'rxjs/operators';
-import { PopularbooksService } from './popularbooks.service';
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { AppConfig } from './../config';
 
 @Injectable({
   providedIn: 'root'
