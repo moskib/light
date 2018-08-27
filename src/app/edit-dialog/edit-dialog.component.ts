@@ -1,5 +1,10 @@
+import { WarningSheetComponent } from './../warning-sheet/warning-sheet.component';
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import {
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+  MatBottomSheet
+} from '@angular/material';
 
 import { BookCardComponent } from '../book-card/book-card.component';
 import { Book } from '../models/book';
@@ -12,6 +17,11 @@ import { Book } from '../models/book';
 export class EditDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<BookCardComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Book
+    @Inject(MAT_DIALOG_DATA) public data: Book,
+    private bottomSheet: MatBottomSheet
   ) {}
+
+  openWerningSheet() {
+    this.bottomSheet.open(WarningSheetComponent);
+  }
 }
