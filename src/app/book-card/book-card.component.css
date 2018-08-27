@@ -15,10 +15,16 @@ hr {
   background-color: rgba(56, 63, 87, 20%);
 }
 
-.btn-card {
+.btn-view {
   background-color: #a84a4f;
   border-color: #a84a4f;
   color: white;
+}
+
+.btn-edit {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
 }
 
 .btn:focus,

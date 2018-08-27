@@ -8,10 +8,15 @@
     <h5 class="card-title">{{book.title}}</h5>
     <p class="card-text">{{book.authors}} </p>
 
-    <button mat-flat-button
-            class="btn btn-card"
-            color="primary"
-            (click)="openDialog()">View Book</button>
-
+    <div class="row">
+      <button mat-flat-button
+              class="btn btn-view btn-block"
+              (click)="openDialog()">View Book</button>
+    </div>
+    <div class="row mt-2">
+      <button mat-flat-button
+              class="btn btn-edit btn-block"
+              (click)="openEditDialog()">Edit Book</button>
+    </div>
   </div>
 </div>

@@ -1,7 +1,9 @@
-import { Book } from './../models/book';
-import { Component, OnInit, Input } from '@angular/core';
+import { EditDialogComponent } from './../edit-dialog/edit-dialog.component';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
+
 import { BookDialogComponent } from '../book-dialog/book-dialog.component';
+import { Book } from './../models/book';
 
 @Component({
   selector: 'book-card',
@@ -15,7 +17,14 @@ export class BookCardComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(BookDialogComponent, {
+    this.dialog.open(BookDialogComponent, {
+      width: '500px',
+      data: { ...this.book }
+    });
+  }
+
+  openEditDialog() {
+    const dialogRef = this.dialog.open(EditDialogComponent, {
       width: '500px',
       data: { ...this.book }
     });

@@ -4,7 +4,8 @@ import {
   MatButtonModule,
   MatCardModule,
   MatDialogModule,
-  MatGridListModule
+  MatGridListModule,
+  MatFormFieldModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +17,7 @@ import { BookDialogComponent } from './book-dialog/book-dialog.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BookService } from './services/book.service';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,10 @@ import { BookService } from './services/book.service';
     HomeComponent,
     NavbarComponent,
     BookCardComponent,
-    BookDialogComponent
+    BookDialogComponent,
+    EditDialogComponent
   ],
-  entryComponents: [BookDialogComponent],
+  entryComponents: [BookDialogComponent, EditDialogComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -33,6 +36,7 @@ import { BookService } from './services/book.service';
     MatButtonModule,
     MatGridListModule,
     MatDialogModule,
+    MatFormFieldModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {
