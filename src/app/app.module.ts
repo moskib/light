@@ -5,7 +5,8 @@ import {
   MatCardModule,
   MatDialogModule,
   MatGridListModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatInputModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,6 +38,7 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     MatGridListModule,
     MatDialogModule,
     MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {

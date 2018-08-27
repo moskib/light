@@ -1,0 +1,10 @@
+.edit-dialog-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.image {
+  margin-right: auto;
+  margin-left: auto;
+}
