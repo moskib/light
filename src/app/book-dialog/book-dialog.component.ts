@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
-import { HomeComponent } from '../home/home.component';
 import { Book } from '../models/book';
+import { BookCardComponent } from './../book-card/book-card.component';
 
 @Component({
   selector: 'book-dialog',
@@ -11,7 +11,7 @@ import { Book } from '../models/book';
 })
 export class BookDialogComponent {
   constructor(
-    public dialogRef: MatDialogRef<HomeComponent>,
+    public dialogRef: MatDialogRef<BookCardComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Book
   ) {}
 

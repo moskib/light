@@ -14,21 +14,9 @@ export class HomeComponent implements OnInit {
   bookIsbns;
   books = [];
 
-  constructor(private bookService: BookService, public dialog: MatDialog) {}
+  constructor(private bookService: BookService) {}
 
   ngOnInit() {
     this.books$ = this.bookService.getBooks();
-  }
-
-  openDialog(book) {
-    const dialogRef = this.dialog.open(BookDialogComponent, {
-      width: '500px',
-      data: { ...book }
-    });
-
-    // specify what you want to do after the dialog closes:
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
 }

@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Book } from './../models/book';
+import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { BookDialogComponent } from '../book-dialog/book-dialog.component';
 
 @Component({
-  selector: 'app-book-card',
+  selector: 'book-card',
   templateUrl: './book-card.component.html',
   styleUrls: ['./book-card.component.css']
 })
-export class BookCardComponent implements OnInit {
+export class BookCardComponent {
+  @Input('book')
+  book: Book;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) {}
 
-  ngOnInit() {
+  openDialog() {
+    const dialogRef = this.dialog.open(BookDialogComponent, {
+      width: '500px',
+      data: { ...this.book }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
-
 }
