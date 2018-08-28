@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {
   MatBottomSheetModule,
   MatButtonModule,
@@ -46,6 +47,8 @@ import { WarningSheetComponent } from './warning-sheet/warning-sheet.component';
     MatInputModule,
     MatBottomSheetModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path: '',

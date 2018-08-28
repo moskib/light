@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material';
+
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 @Component({
@@ -9,7 +10,6 @@ import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 })
 export class WarningSheetComponent {
   constructor(public bottomSheetRef: MatBottomSheetRef<EditDialogComponent>) {}
-
   dismiss() {
     this.bottomSheetRef.dismiss(false);
   }
