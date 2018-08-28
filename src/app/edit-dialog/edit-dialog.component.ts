@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import {
   MAT_DIALOG_DATA,
@@ -9,15 +9,17 @@ import {
 import { BookCardComponent } from '../book-card/book-card.component';
 import { Book } from '../models/book';
 import { WarningSheetComponent } from './../warning-sheet/warning-sheet.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'edit-dialog',
   templateUrl: './edit-dialog.component.html',
   styleUrls: ['./edit-dialog.component.css']
 })
-export class EditDialogComponent implements OnInit {
+export class EditDialogComponent implements OnInit, OnDestroy {
   form: FormGroup;
   hasErrors = false;
+  updateSub: Subscription;
 
   constructor(
     public dialogRef: MatDialogRef<BookCardComponent>,
@@ -52,12 +54,22 @@ export class EditDialogComponent implements OnInit {
   }
 
   openWarningSheet() {
-    console.log(this.form.value);
-    this.bottomSheet
+    this.updateSub = this.bottomSheet
       .open(WarningSheetComponent)
       .afterDismissed()
-      .subscribe(result => {
-        console.log(result);
+      .subscribe(answer => {
+        if (answer) {
+          this.data.title = this.title.value;
+          this.data.authors = this.authors.value;
+          this.data.publishedDate = this.publishedDate.value;
+          this.data.description = this.description.value;
+
+          this.dialogRef.close(this.data);
+        }
       });
+  }
+
+  ngOnDestroy() {
+    if (this.updateSub) this.updateSub.unsubscribe();
   }
 }

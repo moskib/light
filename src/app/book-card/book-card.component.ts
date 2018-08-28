@@ -1,18 +1,20 @@
 import { EditDialogComponent } from './../edit-dialog/edit-dialog.component';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material';
 
 import { BookDialogComponent } from '../book-dialog/book-dialog.component';
 import { Book } from './../models/book';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'book-card',
   templateUrl: './book-card.component.html',
   styleUrls: ['./book-card.component.css']
 })
-export class BookCardComponent {
+export class BookCardComponent implements OnDestroy {
   @Input('book')
   book: Book;
+  subscription: Subscription;
 
   constructor(public dialog: MatDialog) {}
 
@@ -29,8 +31,12 @@ export class BookCardComponent {
       data: { ...this.book }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    this.subscription = dialogRef.afterClosed().subscribe(result => {
+      if (result !== '' || result !== null) this.book = result;
     });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
