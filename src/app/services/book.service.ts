@@ -9,12 +9,8 @@ import { AppConfig } from './../config';
   providedIn: 'root'
 })
 export class BookService {
-  private url =
-    'https://books.google.com/ebooks?id=buc0AAAAMAAJ&dq=holmes&as_brr=4&source=webstore_bookcard';
-  private key = AppConfig.GOOGLE_BOOKS_KEY;
-  private volumeUrl = 'httpx://www.googleapis.com/books/v1/volumes/';
-
   private queryUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
+  private key = AppConfig.GOOGLE_BOOKS_KEY;
 
   constructor(private http: HttpClient) {}
 
