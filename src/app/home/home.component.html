@@ -3,4 +3,11 @@
   <div *ngFor="let book of books">
     <book-card [book]="book"></book-card>
   </div>
+  <button mat-fab
+          @fade
+          *ngIf="showButton"
+          matTooltip="Add a new book"
+          color="primary"
+          class="new-book-button sticky-top"
+          (click)="addNewBook()"><i class="fa fas fa-plus"></i></button>
 </div>

@@ -32,7 +32,7 @@ export class BookCardComponent implements OnDestroy {
     });
 
     this.subscription = dialogRef.afterClosed().subscribe(result => {
-      if (result !== '') this.book = result;
+      if (result) this.book = result;
     });
   }
 

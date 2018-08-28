@@ -64,8 +64,9 @@ export class EditDialogComponent implements OnInit, OnDestroy {
           this.data.publishedDate = this.publishedDate.value;
           this.data.description = this.description.value;
 
-          this.dialogRef.close(this.data);
+          return this.dialogRef.close(this.data);
         }
+        return false;
       });
   }
 

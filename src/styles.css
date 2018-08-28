@@ -10,3 +10,10 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+.btn:focus,
+.btn:active,
+button {
+  outline: none !important;
+  box-shadow: none;
+}

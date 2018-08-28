@@ -7,7 +7,8 @@ import {
   MatDialogModule,
   MatFormFieldModule,
   MatGridListModule,
-  MatInputModule
+  MatInputModule,
+  MatTooltipModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BookService } from './services/book.service';
 import { WarningSheetComponent } from './warning-sheet/warning-sheet.component';
+import { NewBookDialogComponent } from './new-book-dialog/new-book-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +32,14 @@ import { WarningSheetComponent } from './warning-sheet/warning-sheet.component';
     BookCardComponent,
     BookDialogComponent,
     EditDialogComponent,
-    WarningSheetComponent
+    WarningSheetComponent,
+    NewBookDialogComponent
   ],
   entryComponents: [
     BookDialogComponent,
     EditDialogComponent,
-    WarningSheetComponent
+    WarningSheetComponent,
+    NewBookDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,7 @@ import { WarningSheetComponent } from './warning-sheet/warning-sheet.component';
     MatFormFieldModule,
     MatInputModule,
     MatBottomSheetModule,
+    MatTooltipModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

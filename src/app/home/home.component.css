@@ -12,3 +12,9 @@
     columns: 1;
   }
 }
+
+.new-book-button {
+  position: fixed;
+  right: 10%;
+  top: 100px;
+}
