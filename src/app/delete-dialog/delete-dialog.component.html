@@ -1,0 +1,12 @@
+<h6 class="text-center mb-5">Are you sure you want to delete this book?</h6>
+<mat-grid-list cols="12"
+               class="mt-5">
+  <mat-grid-tile [colspan]="6">
+    <button mat-raised-button
+            (click)="yes()">YES</button>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="6">
+    <button mat-raised-button
+            (click)="no()">NO</button>
+  </mat-grid-tile>
+</mat-grid-list>

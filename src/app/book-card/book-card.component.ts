@@ -1,3 +1,4 @@
+import { DeleteDialogComponent } from './../delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './../edit-dialog/edit-dialog.component';
 import { Component, Input, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material';
@@ -34,6 +35,14 @@ export class BookCardComponent implements OnDestroy {
     this.subscription = dialogRef.afterClosed().subscribe(result => {
       if (result) this.book = result;
     });
+  }
+
+  deleteBook() {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '500px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => console.log(result));
   }
 
   ngOnDestroy() {

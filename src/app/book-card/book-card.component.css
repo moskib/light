@@ -27,6 +27,12 @@ hr {
   border-color: #ffc107;
 }
 
+.btn-delete {
+  color: white;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
 .btn:focus,
 .btn:active {
   outline: none !important;

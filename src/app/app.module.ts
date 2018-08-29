@@ -25,6 +25,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BookService } from './services/book.service';
 import { WarningSheetComponent } from './warning-sheet/warning-sheet.component';
 import { NewBookDialogComponent } from './new-book-dialog/new-book-dialog.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +36,15 @@ import { NewBookDialogComponent } from './new-book-dialog/new-book-dialog.compon
     BookDialogComponent,
     EditDialogComponent,
     WarningSheetComponent,
-    NewBookDialogComponent
+    NewBookDialogComponent,
+    DeleteDialogComponent
   ],
   entryComponents: [
     BookDialogComponent,
     EditDialogComponent,
     WarningSheetComponent,
-    NewBookDialogComponent
+    NewBookDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
