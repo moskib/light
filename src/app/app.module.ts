@@ -11,9 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BookCardComponent } from './book-card/book-card.component';
+import { BookCardComponent } from './core/book-card/book-card.component';
 import { DialogsModule } from './dialogs/dialogs.module';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './core/home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BookService } from './services/book.service';
 import { TitlePipe } from './title.pipe';

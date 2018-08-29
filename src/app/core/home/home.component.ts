@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
 
-import { NewBookDialogComponent } from '../dialogs/new-book-dialog/new-book-dialog.component';
-import { BookService } from './../services/book.service';
+import { NewBookDialogComponent } from '../../dialogs/new-book-dialog/new-book-dialog.component';
+import { BookService } from '../../services/book.service';
 
 @Component({
   selector: 'app-home',

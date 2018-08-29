@@ -1,5 +1,5 @@
-import { DeleteDialogComponent } from '../dialogs/delete-dialog/delete-dialog.component';
-import { EditDialogComponent } from '../dialogs/edit-dialog/edit-dialog.component';
+import { DeleteDialogComponent } from '../../dialogs/delete-dialog/delete-dialog.component';
+import { EditDialogComponent } from '../../dialogs/edit-dialog/edit-dialog.component';
 import {
   Component,
   Input,
@@ -9,8 +9,8 @@ import {
 } from '@angular/core';
 import { MatDialog } from '@angular/material';
 
-import { BookDialogComponent } from '../dialogs/book-dialog/book-dialog.component';
-import { Book } from './../models/book';
+import { BookDialogComponent } from '../../dialogs/book-dialog/book-dialog.component';
+import { Book } from '../../models/book';
 import { Subscription } from 'rxjs';
 
 @Component({

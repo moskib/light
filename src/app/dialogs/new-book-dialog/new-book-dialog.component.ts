@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
 
-import { HomeComponent } from '../../home/home.component';
+import { HomeComponent } from '../../core/home/home.component';
 import { Book } from '../../models/book';
 
 @Component({
