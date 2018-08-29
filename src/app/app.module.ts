@@ -8,7 +8,9 @@ import {
   MatFormFieldModule,
   MatGridListModule,
   MatInputModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -50,7 +52,9 @@ import { NewBookDialogComponent } from './new-book-dialog/new-book-dialog.compon
     MatFormFieldModule,
     MatInputModule,
     MatBottomSheetModule,
+    MatNativeDateModule,
     MatTooltipModule,
+    MatDatepickerModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,3 +1,52 @@
-<p>
-  new-book-dialog works!
-</p>
+<mat-dialog-content>
+  <form [formGroup]="form"
+        class="my-2">
+    <div class="edit-dialog-container">
+      <mat-form-field>
+        <input matInput
+               formControlName="title"
+               placeholder="Book Title:">
+        <mat-error *ngIf="title.hasError('required')">Title is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+               formControlName="authors"
+               placeholder="Author(s)">
+        <mat-error *ngIf="authors.hasError('required')">Author is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+               formControlName="publishedDate"
+               [matDatepicker]="picker"
+               placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix
+                               [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="publishedDate.hasError('required')">Publication date is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput
+                  formControlName="description"
+                  matTextAreaAutosize
+                  placeholder="Description"></textarea>
+        <mat-error *ngIf="description.hasError('required')">Description is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+               formControlName="imageUrl"
+               placeholder="Image Url">
+        <mat-error *ngIf="imageUrl.hasError('required')">ImageUrl is required</mat-error>
+        <mat-error *ngIf="imageUrl.hasError('pattern')">ImageUrl is not valid</mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button
+          [disabled]="form.invalid"
+          class="mx-auto"
+          (click)="createNewBook()">Add this book</button>
+  <button mat-flat-button
+          (click)="close()"
+          class="mx-auto">Close</button>
+</mat-dialog-actions>

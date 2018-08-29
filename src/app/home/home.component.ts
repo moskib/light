@@ -3,13 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { BookService } from './../services/book.service';
 import { MatDialog } from '@angular/material';
-import {
-  trigger,
-  transition,
-  style,
-  animate,
-  state
-} from '@angular/animations';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
@@ -45,6 +39,9 @@ export class HomeComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.showButton = true;
+      if (result) {
+        console.log(result);
+      }
     });
   }
 }
