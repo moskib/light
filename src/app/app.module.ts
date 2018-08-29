@@ -1,3 +1,4 @@
+import { TitlePipe } from './title.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -37,7 +38,8 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     EditDialogComponent,
     WarningSheetComponent,
     NewBookDialogComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    TitlePipe
   ],
   entryComponents: [
     BookDialogComponent,

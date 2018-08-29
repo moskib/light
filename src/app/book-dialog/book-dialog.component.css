@@ -9,3 +9,11 @@
   outline: none !important;
   box-shadow: none;
 }
+
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 195px;
+  width: 128px;
+}

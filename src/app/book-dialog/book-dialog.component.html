@@ -2,18 +2,18 @@
   <div *ngIf="data">
     <div class="row">
       <div class="col-6">
-        <img src="{{ data.imageUrl }}">
+        <img src="{{ data.imageUrl }}"
+             class="image">
       </div>
       <div class="col-6 my-auto">
         <dl>
           <dt>Title:</dt>
-          <dd>{{ data.title }}</dd>
+          <dd>{{ data.title | title | titlecase}}</dd>
           <dt>Authors:</dt>
           <dd>{{ data.authors }}</dd>
           <dt>Publish Date: </dt>
           <dd>{{ data.publishedDate | date }}</dd>
-          <dt>Id:</dt>
-          <dd>{{ data.id }}</dd>
+
         </dl>
       </div>
     </div>
