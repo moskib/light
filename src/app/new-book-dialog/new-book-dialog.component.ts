@@ -1,3 +1,4 @@
+import { BookService } from './../services/book.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
@@ -13,11 +14,12 @@ import { Book } from '../models/book';
 export class NewBookDialogComponent implements OnInit {
   form: FormGroup;
   newBook;
-  reg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
+  // reg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
 
   constructor(
     public dialogRef: MatDialogRef<HomeComponent>,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private bookService: BookService
   ) {}
 
   ngOnInit() {
@@ -26,7 +28,7 @@ export class NewBookDialogComponent implements OnInit {
       authors: ['', Validators.required],
       publishedDate: ['', [Validators.required]],
       description: ['', Validators.required],
-      imageUrl: ['', [Validators.required, Validators.pattern(this.reg)]]
+      imageUrl: ['', [Validators.required]]
     });
   }
 
@@ -51,17 +53,15 @@ export class NewBookDialogComponent implements OnInit {
   }
 
   createNewBook() {
-    if (this.form.valid) {
-      this.newBook = <Book>{
-        title: this.title.value,
-        authors: this.authors.value,
-        publishedDate: this.publishedDate.value,
-        description: this.description.value,
-        imageUrl: this.imageUrl.value
-      };
-    }
+    this.newBook = <Book>{
+      title: this.title.value,
+      authors: this.authors.value,
+      publishedDate: this.publishedDate.value,
+      description: this.description.value,
+      imageUrl: this.imageUrl.value
+    };
 
-    return this.dialogRef.close(this.newBook);
+    this.dialogRef.close(this.newBook);
   }
 
   close() {

@@ -1,9 +1,12 @@
+import { Book } from './../models/book';
 import { NewBookDialogComponent } from './../new-book-dialog/new-book-dialog.component';
 import { Component, OnInit } from '@angular/core';
 
 import { BookService } from './../services/book.service';
 import { MatDialog } from '@angular/material';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { combineLatest, Observable } from 'rxjs';
+import { concat, merge } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -22,13 +25,15 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ]
 })
 export class HomeComponent implements OnInit {
-  books$;
+  books$: Observable<{}>;
+  books;
   showButton = true;
 
   constructor(private bookService: BookService, private dialog: MatDialog) {}
 
   ngOnInit() {
-    this.books$ = this.bookService.getBooks();
+    // this.books$ = this.bookService.getBooks();
+    this.bookService.getBooks().subscribe(result => (this.books = result));
   }
 
   addNewBook() {
@@ -40,7 +45,7 @@ export class HomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       this.showButton = true;
       if (result) {
-        console.log(result);
+        this.books.push(result);
       }
     });
   }
