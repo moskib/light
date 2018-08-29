@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BookCardComponent } from '../book-card/book-card.component';
+import { BookCardComponent } from '../../book-card/book-card.component';
 import { MatDialogRef } from '@angular/material';
 
 @Component({

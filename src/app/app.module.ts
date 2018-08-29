@@ -1,17 +1,10 @@
-import { TitlePipe } from './title.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {
-  MatBottomSheetModule,
   MatButtonModule,
   MatDialogModule,
-  MatFormFieldModule,
   MatGridListModule,
-  MatInputModule,
-  MatTooltipModule,
-  MatDatepickerModule,
-  MatNativeDateModule
+  MatTooltipModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,14 +12,11 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BookCardComponent } from './book-card/book-card.component';
-import { BookDialogComponent } from './book-dialog/book-dialog.component';
-import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { DialogsModule } from './dialogs/dialogs.module';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BookService } from './services/book.service';
-import { WarningSheetComponent } from './warning-sheet/warning-sheet.component';
-import { NewBookDialogComponent } from './new-book-dialog/new-book-dialog.component';
-import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { TitlePipe } from './title.pipe';
 
 @NgModule({
   declarations: [
@@ -34,19 +24,7 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     HomeComponent,
     NavbarComponent,
     BookCardComponent,
-    BookDialogComponent,
-    EditDialogComponent,
-    WarningSheetComponent,
-    NewBookDialogComponent,
-    DeleteDialogComponent,
     TitlePipe
-  ],
-  entryComponents: [
-    BookDialogComponent,
-    EditDialogComponent,
-    WarningSheetComponent,
-    NewBookDialogComponent,
-    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -54,15 +32,9 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     MatButtonModule,
     MatGridListModule,
     MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatBottomSheetModule,
-    MatNativeDateModule,
     MatTooltipModule,
-    MatDatepickerModule,
     BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
+    DialogsModule,
     RouterModule.forRoot([
       {
         path: '',

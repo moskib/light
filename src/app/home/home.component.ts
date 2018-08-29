@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
 
-import { NewBookDialogComponent } from './../new-book-dialog/new-book-dialog.component';
+import { NewBookDialogComponent } from '../dialogs/new-book-dialog/new-book-dialog.component';
 import { BookService } from './../services/book.service';
 
 @Component({

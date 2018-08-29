@@ -6,9 +6,9 @@ import {
   MatDialogRef
 } from '@angular/material';
 
-import { BookCardComponent } from '../book-card/book-card.component';
-import { Book } from '../models/book';
-import { WarningSheetComponent } from './../warning-sheet/warning-sheet.component';
+import { BookCardComponent } from '../../book-card/book-card.component';
+import { Book } from '../../models/book';
+import { WarningSheetComponent } from '../warning-sheet/warning-sheet.component';
 import { Subscription } from 'rxjs';
 
 @Component({

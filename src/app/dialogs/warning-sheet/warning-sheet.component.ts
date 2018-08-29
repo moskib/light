@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material';
-
-import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { EditDialogComponent } from 'src/app/dialogs/edit-dialog/edit-dialog.component';
 
 @Component({
   selector: 'app-warning-sheet',
