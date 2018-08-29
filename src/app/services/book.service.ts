@@ -12,7 +12,11 @@ export class BookService {
   private queryUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
   private key = AppConfig.GOOGLE_BOOKS_KEY;
 
-  constructor(private http: HttpClient) {}
+  books;
+
+  constructor(private http: HttpClient) {
+    this.getBooks().subscribe(books => (this.books = books));
+  }
 
   getBooks(): Observable<{}> {
     return this.http

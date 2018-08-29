@@ -1,6 +1,12 @@
 import { DeleteDialogComponent } from './../delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './../edit-dialog/edit-dialog.component';
-import { Component, Input, OnDestroy } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnDestroy,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { MatDialog } from '@angular/material';
 
 import { BookDialogComponent } from '../book-dialog/book-dialog.component';
@@ -13,6 +19,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./book-card.component.css']
 })
 export class BookCardComponent implements OnDestroy {
+  @Output('delete')
+  delete = new EventEmitter();
   @Input('book')
   book: Book;
   subscription: Subscription;
@@ -37,12 +45,16 @@ export class BookCardComponent implements OnDestroy {
     });
   }
 
-  deleteBook() {
+  onDeleteClicked() {
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
       width: '500px'
     });
 
-    dialogRef.afterClosed().subscribe(result => console.log(result));
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.delete.emit(this.book.id);
+      }
+    });
   }
 
   ngOnDestroy() {

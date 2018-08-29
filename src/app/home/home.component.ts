@@ -46,4 +46,12 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+  deleteBook(event) {
+    for (let i = 0; i < this.books.length; i++) {
+      if (this.books[i].id === event) {
+        this.books.splice(i, 1);
+      }
+    }
+  }
 }

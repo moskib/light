@@ -8,6 +8,8 @@
 <div *ngIf="books"
      class="card-columns">
   <div *ngFor="let book of books">
-    <book-card [book]="book"></book-card>
+    <book-card [book]="book"
+               @fade
+               (delete)="deleteBook($event)"></book-card>
   </div>
 </div>
