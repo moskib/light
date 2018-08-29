@@ -7,7 +7,7 @@ import {
 } from '@angular/material';
 
 import { BookCardComponent } from '../../core/book-card/book-card.component';
-import { Book } from '../../models/book';
+import { Book } from '../../core/models/book';
 import { WarningSheetComponent } from '../warning-sheet/warning-sheet.component';
 import { Subscription } from 'rxjs';
 

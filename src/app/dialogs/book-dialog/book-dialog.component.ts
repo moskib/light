@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
-import { Book } from '../../models/book';
+import { Book } from '../../core/models/book';
 import { BookCardComponent } from '../../core/book-card/book-card.component';
 
 @Component({

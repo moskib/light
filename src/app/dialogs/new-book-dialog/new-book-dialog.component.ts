@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
 
 import { HomeComponent } from '../../core/home/home.component';
-import { Book } from '../../models/book';
+import { Book } from '../../core/models/book';
 
 @Component({
   selector: 'app-new-book-dialog',

@@ -10,7 +10,7 @@ import {
 import { MatDialog } from '@angular/material';
 
 import { BookDialogComponent } from '../../dialogs/book-dialog/book-dialog.component';
-import { Book } from '../../models/book';
+import { Book } from '../models/book';
 import { Subscription } from 'rxjs';
 
 @Component({

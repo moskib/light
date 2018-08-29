@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { BookCardComponent } from './core/book-card/book-card.component';
 import { DialogsModule } from './dialogs/dialogs.module';
 import { HomeComponent } from './core/home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './core/navbar/navbar.component';
 import { BookService } from './services/book.service';
 import { TitlePipe } from './title.pipe';
 
