@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
 
 import { NewBookDialogComponent } from '../../dialogs/new-book-dialog/new-book-dialog.component';
-import { BookService } from '../../services/book.service';
+import { BookService } from '../services/book.service';
 
 @Component({
   selector: 'app-home',

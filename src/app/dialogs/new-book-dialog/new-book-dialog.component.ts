@@ -1,4 +1,4 @@
-import { BookService } from '../../services/book.service';
+import { BookService } from '../../core/services/book.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';

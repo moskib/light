@@ -15,8 +15,8 @@ import { BookCardComponent } from './core/book-card/book-card.component';
 import { DialogsModule } from './dialogs/dialogs.module';
 import { HomeComponent } from './core/home/home.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
-import { BookService } from './services/book.service';
-import { TitlePipe } from './title.pipe';
+import { BookService } from './core/services/book.service';
+import { TitlePipe } from './core/title.pipe';
 
 @NgModule({
   declarations: [
